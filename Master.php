@@ -1,5 +1,7 @@
 <?php
-    Class Master {
+    namespace self_defence_school;
+
+    Class Master extends StudentMaster{
 
         public function __construct(
             private string $name,  
@@ -21,10 +23,6 @@
 
         public function getName() {
             return $this->name;
-        }
-
-        public function getWeaponOfChoice() {
-            return $this->weapon_of_choice;
         }
 
         public function setSkillLevel(int $skill_level) : void {
