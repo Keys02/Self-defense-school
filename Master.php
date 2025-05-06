@@ -1,12 +1,13 @@
 <?php
-    namespace self_defence_school;
+    declare(strict_types = 1);
 
-    Class Master extends StudentMaster{
+    namespace SelfDefenseSchool;
+
+    Class Master extends StudentMaster
+    {
 
         public function __construct(
-            private string $name,  
             private int $skill_level,
-            private string $weapon_of_choice = 'blade', 
         ) {}
 
         public static function teachKungFu(object $master, string $student_name) : string {
@@ -17,29 +18,12 @@
             return "Master {$master->name} is teaching $student_name Muay Thai";
         }
 
-        public function getSkillLevel() {
+        public function getSkillLevel() : int {
             return $this->skill_level;
-        }
-
-        public function getName() {
-            return $this->name;
         }
 
         public function setSkillLevel(int $skill_level) : void {
             $this->skill_level = $skill_level;
         }
-
-        public function setWeaponOfChoice(string $weapon) {
-            $this->weapon_of_choice = $weapon;
-        }
     }
-
-
-    $master_shifu = new Master(name:'Shifu', skill_level:5);
-    $master_yoda = new Master('Yoda', 4);
-
-    echo Master::teachKungFu($master_yoda, "Chris");
-    newline();
-    echo Master::teachMuayThai($master_yoda, "Austin");
-    newline();
 ?>
