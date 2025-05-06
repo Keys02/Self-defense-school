@@ -11,12 +11,14 @@
             private array $enrolled_courses = []
         ){}
 
-        public function setBadge(string $badge) : void {
+        public function assignBadge(Badge $badge) : void {
             $this->badges[] = $badge;
         }
 
-        public function getBadges() : array {
-            return $this->badges;
+        public function getStudentBadges() : void {
+            foreach($this->badges as $badge) {
+                echo "$badge <br/>";
+            }
         }
 
         public function addCourse(Course $course) : void {
@@ -30,6 +32,5 @@
                 throw new \Exception("User not enrolled in the course you are trying to drop");
             }
         }
-
     }
 ?>

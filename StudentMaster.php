@@ -7,10 +7,10 @@
     {
         public function __construct
         (
-            private string $id,
-            private string $name,
-            private string $specialization,
-            private string $weapon_of_choice,
+            protected string $id,
+            protected string $name,
+            protected string $specialization,
+            protected string $weapon_of_choice,
         ){}
 
         /*--------------------------------

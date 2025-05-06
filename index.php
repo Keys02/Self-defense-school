@@ -9,4 +9,5 @@
     use SelfDefenseSchool\Master;
     use SelfDefenseSchool\Student;
     use SelfDefenseSchool\Course;
+    use SelfDefenseSchool\Badge;
 ?>
