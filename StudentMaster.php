@@ -13,6 +13,9 @@
             private string $weapon_of_choice,
         ){}
 
+        /*--------------------------------
+         *            Setters
+        ---------------------------------*/
         public function setId(string $id) : void {
             $this->id = $id;
         }
@@ -29,6 +32,9 @@
             $this->weapon_of_choice = $weapon;
         }
 
+        /*--------------------------------
+         *            Getters
+        ---------------------------------*/
         public function getId() : string {
             return $this->id;
         }
