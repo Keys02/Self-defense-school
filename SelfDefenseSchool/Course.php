@@ -9,8 +9,8 @@
             private string $course_name,
             private string $fighting_style,
             private int $course_duration_in_hours,
-            private object $course_master,
-            private object $course_badge,
+            private Course $course_master,
+            private Badge $course_badge,
             private array $students_taking_course = []
         ){}
 
