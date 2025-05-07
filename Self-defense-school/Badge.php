@@ -5,7 +5,7 @@
     {
         public function __construct(
             public string $badge_name,
-            public string $fightStyle
+            public Course $course_name
         ) {}
     }
 ?>

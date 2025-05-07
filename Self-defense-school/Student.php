@@ -40,6 +40,13 @@
             }
         }
 
+        public function getEnrolledCourses() {
+            $enrolled_courses_list  = "{";
+            foreach($this->enrolled_courses as $enrolled_courses) {
+                $enrolled_courses_list .= $enrolled_courses->getCourseName;
+            }
+        }
+
         public function dropCourse(Course $course) : void {
             if(in_array($course, $this->enrolled_courses)) {
                 //Remove the element from the array

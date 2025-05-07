@@ -5,11 +5,17 @@
     class Course 
     {
         public function __construct(
+            public string $course_id,
+            public string $course_name,
             public string $fighting_style,
-            public string $course_duration,
+            public int $course_duration_in_hours,
             public object $course_master,
-            public array $studentsTakingCourse
+            public array $studentsTakingCourse = []
         ){}
+
+        public function getCourseName() : string {
+            return $this->course_name;
+        }
 
         public function addStudent(Student $student) {
             $this->studentsTakingCourse[] = $student;
