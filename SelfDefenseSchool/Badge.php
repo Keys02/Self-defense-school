@@ -1,4 +1,5 @@
 <?php
+    declare(strict_types = 1);
     namespace SelfDefenseSchool;
     
     class Badge
@@ -8,7 +9,7 @@
             public bool $belongs_to_a_course = false
         ) {}
 
-        public function getBadgeName() {
+        public function getBadgeName() : string {
             return $this->badge_name;
         }
     }
