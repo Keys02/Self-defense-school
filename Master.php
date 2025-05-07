@@ -3,7 +3,7 @@
 
     namespace SelfDefenseSchool;
 
-    Class Master extends StudentMaster
+    class Master extends StudentMaster
     {
 
         public function __construct(
@@ -11,25 +11,30 @@
             private string $name,
             private string $specialization,
             private string $weapon_of_choice,
-            private int $skill_level,
+            private int $rank,
         ) {
             parent::__construct($id, $name, $specialization, $weapon_of_choice);
+            if($this->checkRank($rank)) {
+                $this->rank = $rank;
+            }
         }
 
-        // public static function teachKungFu(object $master, string $student_name) : string {
-        //     return "Master {$master->name} is teaching $student_name Kung fu";
-        // }
-
-        // public static function teachMuayThai(object $master, string $student_name) : string {
-        //     return "Master {$master->name} is teaching $student_name Muay Thai";
-        // }
-
-        public function getSkillLevel() : int {
-            return $this->skill_level;
+        public function getRank() : int {
+            return $this->rank;
         }
 
-        public function setSkillLevel(int $skill_level) : void {
-            $this->skill_level = $skill_level;
+        private function checkRank($rank) : bool {
+            if($rank >= 0 and $rank <= 5) {
+                throw new \Exception("The rank range must be a number from 1-5");
+                return false;
+            }
+            return true;
+        }
+
+        public function setRank(int $rank) : void {
+            if($this->checkRank($rank)) {
+                $this->rank = $rank;
+            }
         }
     }
 ?>

@@ -21,14 +21,23 @@
             $this->badges[] = $badge;
         }
 
-        public function getStudentBadges() : void {
+        public function getStudentBadges() : string {
+            $badgeList = "{";
+
             foreach($this->badges as $badge) {
-                echo "$badge <br/>";
+                $badgeList .= "$badge,";
             }
+
+            $badgeList = "}";
+            return $badgeList;
         }
 
-        public function addCourse(Course $course) : void {
-            $this->enrolled_courses[] = $course;
+        public function enrollCourse(Course $course) : void {
+            if(in_array($course, $this->enrolled_courses)) {
+                throw new \Exception("$this->name already enrolled to $course->fighting_style with Master $course->course_master");
+            } else {
+                $this->enrolled_courses[] = $course;
+            }
         }
 
         public function dropCourse(Course $course) : void {

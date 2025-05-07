@@ -1,5 +1,6 @@
 <?php
     namespace SelfDefenseSchool;
+    
     class Badge
     {
         public function __construct(

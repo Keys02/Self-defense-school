@@ -10,4 +10,6 @@
     use SelfDefenseSchool\Student;
     use SelfDefenseSchool\Course;
     use SelfDefenseSchool\Badge;
+
+    // $master_shifu = new Master("1", "Master Shifu", "Kung fu", "stick", 5);
 ?>

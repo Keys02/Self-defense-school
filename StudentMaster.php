@@ -11,9 +11,8 @@
             protected string $name,
             protected string $specialization,
             protected string $weapon_of_choice,
-        ){
-            
-        }
+        ){}
+
 
         /*--------------------------------
          *            Setters
@@ -34,6 +33,7 @@
             $this->weapon_of_choice = $weapon;
         }
 
+        
         /*--------------------------------
          *            Getters
         ---------------------------------*/
