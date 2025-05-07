@@ -35,7 +35,6 @@
     // Testing Roy Lee Student object
     $student_roy_lee->enrollCourse($kung_fu_fall);
     $student_roy_lee->enrollCourse($muay_thai_fall);
-    $student_roy_lee->enrollCourse($kung_fu_fall);
     echo $student_roy_lee->getEnrolledCourses();
     newline();
     echo $student_roy_lee->getStudentBadges();

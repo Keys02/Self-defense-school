@@ -9,10 +9,10 @@
     {
         public function __construct
         (
-            public string $id,
-            public string $name,
-            public string $specialization,
-            public string $weapon_of_choice,
+            string $id,
+            string $name,
+            string $specialization,
+            string $weapon_of_choice,
             private int $rank,
         ) {
             parent::__construct($id, $name, $specialization, $weapon_of_choice);
