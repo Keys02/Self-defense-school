@@ -1,10 +1,11 @@
 <?php
     declare(strict_types = 1);
 
-    require __DIR__ . "/Master.php";
-    require __DIR__ . "/Student.php";
-    require __DIR__ . "/StudentMaster.php";
-    require __DIR__ . "/Course.php";
+    require __DIR__ . "/Self-defense-school/Master.php";
+    require __DIR__ . "/Self-defense-school/Student.php";
+    require __DIR__ . "/Self-defense-school/Course.php";
+    require __DIR__ . "/Self-defense-school/Badge.php";
+    require __DIR__ . "/functions.php";
 
     use SelfDefenseSchool\Master;
     use SelfDefenseSchool\Student;
@@ -17,4 +18,9 @@
     $muay_thai_completion_badge = new Badge("Black belt in Muay Thai", $muay_thai_fall);
 
     $student_roy_lee->enrollCourse($muay_thai_fall);
+    echo $student_roy_lee->getEnrolledCourses();
+    newline();
+    echo $student_roy_lee->getStudentBadges();
+    $student_roy_lee->dropCourse($muay_thai_fall);
+    echo $student_roy_lee->getEnrolledCourses();
 ?>

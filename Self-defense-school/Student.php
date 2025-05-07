@@ -2,15 +2,15 @@
     declare(strict_types = 1);
 
     namespace SelfDefenseSchool;
-    
+
     class Student extends StudentMaster
     {
         public function __construct
         (
-            private string $id,
-            private string $name,
-            private string $specialization,
-            private string $weapon_of_choice,
+            string $id,
+            string $name,
+            string $specialization,
+            string $weapon_of_choice,
             private array $badges = [],
             private array $enrolled_courses = []
         ){
@@ -18,17 +18,17 @@
         }
 
         public function assignBadge(Badge $badge) : void {
-            $this->badges[] = $badge;
+            if($badge instanceof Badge) {
+                $this->badges[] = $badge;
+            }
         }
 
         public function getStudentBadges() : string {
             $badgeList = "{";
-
-            foreach($this->badges as $badge) {
+            foreach($this->badges as $badge) { 
                 $badgeList .= "$badge,";
             }
-
-            $badgeList = "}";
+            $badgeList .= "}";
             return $badgeList;
         }
 
@@ -40,11 +40,13 @@
             }
         }
 
-        public function getEnrolledCourses() {
+        public function getEnrolledCourses() : string {
             $enrolled_courses_list  = "{";
-            foreach($this->enrolled_courses as $enrolled_courses) {
-                $enrolled_courses_list .= $enrolled_courses->getCourseName;
+            foreach($this->enrolled_courses as $enrolled_course) {
+                $enrolled_courses_list .= "{$enrolled_course->getCourseName()}";
             }
+            $enrolled_courses_list .= "}";
+            return $enrolled_courses_list;
         }
 
         public function dropCourse(Course $course) : void {

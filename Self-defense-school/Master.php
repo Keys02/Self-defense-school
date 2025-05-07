@@ -3,14 +3,16 @@
 
     namespace SelfDefenseSchool;
 
+    include __DIR__ . "/StudentMaster.php";
+
     class Master extends StudentMaster
     {
-
-        public function __construct(
-            private string $id,
-            private string $name,
-            private string $specialization,
-            private string $weapon_of_choice,
+        public function __construct
+        (
+            public string $id,
+            public string $name,
+            public string $specialization,
+            public string $weapon_of_choice,
             private int $rank,
         ) {
             parent::__construct($id, $name, $specialization, $weapon_of_choice);
@@ -23,8 +25,8 @@
             return $this->rank;
         }
 
-        private function checkRank($rank) : bool {
-            if($rank >= 0 and $rank <= 5) {
+        private function checkRank(int $rank) : bool {
+            if($rank < 0 && $rank > 5) {
                 throw new \Exception("The rank range must be a number from 1-5");
                 return false;
             }
