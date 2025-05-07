@@ -26,8 +26,8 @@
             return count($this->students_taking_course);
         }
 
-        public function getCourseMaster(Master $master) {
-            return $master->getName();
+        public function getCourseMaster() {
+            return $this->course_master;
         }
 
         public function assignBadgeToCourse(Badge $badge) {
