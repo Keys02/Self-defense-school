@@ -26,6 +26,11 @@
             return count($this->students_taking_course);
         }
 
+        // public function getEnrolledStds() : string {
+        //     $enrolled_students_list = "{"
+
+        // }
+
         public function getCourseMaster() : object {
             return $this->course_master;
         }

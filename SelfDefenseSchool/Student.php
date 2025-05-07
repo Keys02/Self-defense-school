@@ -43,6 +43,7 @@
                 throw new \Exception("{$this->name} already enrolled in {$course_name} with Master {$course_master->getName()}");
             } else {
                 $this->enrolled_courses[] = $course;
+                $course->addStudent($this);
             }
         }
 
