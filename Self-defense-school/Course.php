@@ -10,7 +10,7 @@
             public string $fighting_style,
             public int $course_duration_in_hours,
             public object $course_master,
-            public array $studentsTakingCourse = []
+            public array $students_taking_course = []
         ){}
 
         public function getCourseName() : string {
@@ -18,11 +18,11 @@
         }
 
         public function addStudent(Student $student) {
-            $this->studentsTakingCourse[] = $student;
+            $this->students_taking_course[] = $student;
         }
 
         public function getNoOfEnrolledStds() {
-            return count($this->studentsTakingCourse);
+            return count($this->students_taking_course);
         }
 
         public function getCourseMaster(Master $master) {
