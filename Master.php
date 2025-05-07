@@ -7,16 +7,22 @@
     {
 
         public function __construct(
+            private string $id,
+            private string $name,
+            private string $specialization,
+            private string $weapon_of_choice,
             private int $skill_level,
-        ) {}
-
-        public static function teachKungFu(object $master, string $student_name) : string {
-            return "Master {$master->name} is teaching $student_name Kung fu";
+        ) {
+            parent::__construct($id, $name, $specialization, $weapon_of_choice);
         }
 
-        public static function teachMuayThai(object $master, string $student_name) : string {
-            return "Master {$master->name} is teaching $student_name Muay Thai";
-        }
+        // public static function teachKungFu(object $master, string $student_name) : string {
+        //     return "Master {$master->name} is teaching $student_name Kung fu";
+        // }
+
+        // public static function teachMuayThai(object $master, string $student_name) : string {
+        //     return "Master {$master->name} is teaching $student_name Muay Thai";
+        // }
 
         public function getSkillLevel() : int {
             return $this->skill_level;

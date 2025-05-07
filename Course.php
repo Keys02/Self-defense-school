@@ -7,7 +7,7 @@
         public function __construct(
             public string $fighting_style,
             public string $course_duration,
-            public object $course_instructor,
+            public object $course_master,
             public array $studentsTakingCourse
         ){}
 
@@ -17,6 +17,10 @@
 
         public function getNoOfEnrolledStds() {
             return count($this->studentsTakingCourse);
+        }
+
+        public function getCourseMaster(Master $master) {
+            return $master->getName();
         }
         
     }

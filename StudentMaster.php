@@ -11,7 +11,9 @@
             protected string $name,
             protected string $specialization,
             protected string $weapon_of_choice,
-        ){}
+        ){
+            
+        }
 
         /*--------------------------------
          *            Setters
