@@ -24,9 +24,13 @@
         }
 
         public function getStudentBadges() : string {
-            $badgeList = "{";
-            foreach($this->badges as $badge) { 
-                $badgeList .= "$badge,";
+            $badges_last_key = array_key_last($this->badges);
+            $badgeList = "$this->name badges: {";
+            foreach($this->badges as $key => $badge) { 
+                $badgeList .= "$badge";
+                if($key !== $badges_last_key) {
+                    $badgeList .= ", ";
+                }
             }
             $badgeList .= "}";
             return $badgeList;
@@ -34,16 +38,21 @@
 
         public function enrollCourse(Course $course) : void {
             if(in_array($course, $this->enrolled_courses)) {
-                throw new \Exception("$this->name already enrolled to {$course->getCourseName()} with Master {$course->getCourseMaster()}");
+                // throw new \Exception("$this->name already enrolled to {$course->getCourseName()} with Master {$course->getCourseMaster()}");
             } else {
                 $this->enrolled_courses[] = $course;
             }
         }
 
         public function getEnrolledCourses() : string {
-            $enrolled_courses_list  = "{";
-            foreach($this->enrolled_courses as $enrolled_course) {
+            $enrolled_courses_last_key = array_key_last($this->enrolled_courses);
+            $enrolled_courses_list  = "$this->name enrolled courses: {";
+            foreach($this->enrolled_courses as $key => $enrolled_course) {
                 $enrolled_courses_list .= "{$enrolled_course->getCourseName()}";
+                if($key !== $enrolled_courses_last_key) {
+                    $enrolled_courses_list .= ", ";
+                }
+                
             }
             $enrolled_courses_list .= "}";
             return $enrolled_courses_list;
