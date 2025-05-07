@@ -22,9 +22,9 @@
     $student_roy_lee = new Student("1", "Roy Lee", "Kung fu", "stick");
 
     // Badges
-    $muay_thai_completion_badge = new Badge("Black belt in Muay Thai", $muay_thai_fall);
-    $kung_fu_completion_badge = new Badge("Black belt in Kung fu", $kung_fu_fall);
-    $muay_thai_fall_badge = new Badge("Badge of Completion", $muay_thai_fall);
+    $muay_thai_completion_badge = new Badge("Black belt in Muay Thai", true);
+    $kung_fu_completion_badge = new Badge("Black belt in Kung fu", true);
+    $muay_thai_fall_badge = new Badge("Badge of Completion");
 
 
     // Courses

@@ -5,15 +5,11 @@
     {
         public function __construct(
             public string $badge_name,
-            public ?Course $course_name
+            public bool $belong_to_a_course = false
         ) {}
 
         public function getBadgeName() {
             return $this->badge_name;
-        }
-
-        public function getBadgeAssignedCourse(Course $course) : string {
-            return $course->getCourseName();
         }
     }
 ?>
