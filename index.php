@@ -16,17 +16,20 @@
     $master_shifu = new Master("1", "Master Shifu", "Kung fu", "stick", 5);
     $master_ong_bak = new Master("2", "Master Ong Bak", "Muay Thai", "Mai Sok", 5);
     $master_ryan_gordon = new Master("3", "Master Ryan Gordon", "Jiu Jitsu", "Katana", 4);
+    $master_boyka = new Master("4", "Master Boyka", "Karate", "stick", 5);
 
     // Students
     $student_roy_lee = new Student("1", "Roy Lee", "Kung fu", "stick");
 
-    // Courses
-    $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 25, $master_ong_bak);
-    $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 45, $master_shifu);
-
     // Badges
     $muay_thai_completion_badge = new Badge("Black belt in Muay Thai", $muay_thai_fall);
+    $kung_fu_completion_badge = new Badge("Black belt in Kung fu", $kung_fu_fall);
     $muay_thai_fall_badge = new Badge("Badge of Completion", $muay_thai_fall);
+
+
+    // Courses
+    $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 25, $master_ong_bak, $muay_thai_completion_badge);
+    $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 45, $master_shifu, $kung_fu_completion_badge);
 
     // Testing classes
     $student_roy_lee->enrollCourse($muay_thai_fall);

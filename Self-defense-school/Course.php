@@ -5,12 +5,13 @@
     class Course 
     {
         public function __construct(
-            public string $course_id,
-            public string $course_name,
-            public string $fighting_style,
-            public int $course_duration_in_hours,
-            public object $course_master,
-            public array $students_taking_course = []
+            private string $course_id,
+            private string $course_name,
+            private string $fighting_style,
+            private int $course_duration_in_hours,
+            private object $course_master,
+            private object $course_badge,
+            private array $students_taking_course = []
         ){}
 
         public function getCourseName() : string {
@@ -27,6 +28,16 @@
 
         public function getCourseMaster(Master $master) {
             return $master->getName();
+        }
+
+        public function assignBadgeToCourse(Badge $badge) {
+            if($badge instanceof Badge) {
+                $this->course_badge = $badge;
+            }
+        }
+
+        public function getCourseBadge() : string {
+            return $this->course_badge->badge_name;
         }
         
     }
