@@ -5,6 +5,9 @@
 
     class Student extends StudentMaster
     {
+        //Use MakeList trait
+        use MakeList;
+
         public function __construct
         (
             string $id,
@@ -24,15 +27,7 @@
         }
 
         public function getStudentBadges() : string {
-            $badges_last_key = array_key_last($this->badges);
-            $badgeList = "$this->name badges: {";
-            foreach($this->badges as $key => $badge) { 
-                $badgeList .= "$badge";
-                if($key !== $badges_last_key) {
-                    $badgeList .= ", ";
-                }
-            }
-            $badgeList .= "}";
+            $badgeList = "$this->name badges: {$this->list($this->badges, "badges")}";
             return $badgeList;
         }
 
@@ -43,20 +38,12 @@
                 throw new \Exception("{$this->name} already enrolled in {$course_name} with Master {$course_master->getName()}");
             } else {
                 $this->enrolled_courses[] = $course;
+                $course->addStudent($this);
             }
         }
 
         public function getEnrolledCourses() : string {
-            $enrolled_courses_last_key = array_key_last($this->enrolled_courses);
-            $enrolled_courses_list  = "$this->name enrolled courses: {";
-            foreach($this->enrolled_courses as $key => $enrolled_course) {
-                $enrolled_courses_list .= "{$enrolled_course->getCourseName()}";
-                if($key !== $enrolled_courses_last_key) {
-                    $enrolled_courses_list .= ", ";
-                }
-                
-            }
-            $enrolled_courses_list .= "}";
+            $enrolled_courses_list  = "$this->name enrolled courses: {$this->list($this->enrolled_courses, "courses name")}";
             return $enrolled_courses_list;
         }
 
@@ -68,6 +55,19 @@
             } else {
                 throw new \Exception("User not enrolled in the course you are trying to drop");
             }
+        }
+
+
+        public function __toString() : string {
+            return <<<STUDENT_DETAILS
+                        $this->name: {<br/>
+                            &emsp;ID: $this->id <br/>
+                            &emsp;Specialization: $this->specialization <br/>
+                            &emsp;Weapon of Choice: $this->weapon_of_choice <br/>
+                            &emsp;Badges: {$this->list($this->badges, "badges")} <br/>
+                            &emsp;Enrolled Courses: {$this->list($this->enrolled_courses, "courses name")}<br/>
+                        }
+                    STUDENT_DETAILS;
         }
     }
 ?>

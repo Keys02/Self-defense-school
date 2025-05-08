@@ -4,6 +4,7 @@
     namespace SelfDefenseSchool;
 
     include __DIR__ . "/StudentMaster.php";
+    include __DIR__ . "/MakeList.php";
 
     class Master extends StudentMaster
     {
@@ -37,6 +38,17 @@
             if($this->checkRank($rank)) {
                 $this->rank = $rank;
             }
+        }
+
+        public function __toString() : string {
+            return <<<MASTER_DETAILS
+                        $this->name: {<br/>
+                            &emsp;ID: $this->id<br/>
+                            &emsp;Specialization: $this->specialization<br/>
+                            &emsp;Weapon of choice: $this->weapon_of_choice<br/>
+                            &emsp;Rank: $this->rank<br/>
+                        }
+                    MASTER_DETAILS;
         }
     }
 ?>
