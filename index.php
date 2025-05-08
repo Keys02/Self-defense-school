@@ -45,7 +45,7 @@
     newline();
     echo $muay_thai_fall;
 
-    // Echo statement
+    // Echo statements
     newline();
     newline();
     echo $muay_thai_fall_badge;
