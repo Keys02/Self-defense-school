@@ -23,22 +23,6 @@
         }
 
         public function __toString() : string {
-            // if(isset($this->course_name)) {
-            //     return <<<BADGE_DETAILS
-            //                 $this->badge_name: {<br/>
-            //                      &emsp;ID: $this->badge_id <br/>
-            //                     &emsp;Course name: {$this->course_name->getCourseName()}<br/>
-            //                 }
-            //             BADGE_DETAILS;
-            // } else {
-            //     return <<<BADGE_DETAILS
-            //         $this->badge_name: {<br/>
-            //             &emsp;ID: $this->badge_id <br/>
-            //             &emsp;Course name: Not a course badge<br/>
-            //         }
-            //     BADGE_DETAILS;
-            // }
-
             $badge_details = <<<BADGE_DETAILS
                                     $this->badge_name: {<br/>
                                         &emsp;ID: $this->badge_id <br/>
