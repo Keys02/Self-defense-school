@@ -4,21 +4,40 @@
 - Define interface for classes so when their instances are passed as argument in methods, it can be check whether the method being called in the method body exists.  
   
     ```php
-    //BadgeToCourse trait
-        namespace SelfDefenseSchool;
-
-        interface BadgeToCourseManager
-        {
-            public function setBadgeCourseName(Course $course) : void;
-        }
-        
+    //BadgeToCourse interface
+    interface BadgeToCourseManager
+    {
+        public function setBadgeCourseName(Course $course) : void;
+    }
+    
     //Inside Course class
-        private function assignBadge(BadgeToCourseManager $badge) {
-            if($badge instanceof Badge) {
-                $this->course_badge = $badge;
-                $badge->setBadgeCourseName($this);
-            }
+    private function assignBadge(BadgeToCourseManager $badge) {
+        if($badge instanceof Badge) {
+            $this->course_badge = $badge;
+            $badge->setBadgeCourseName($this);
         }
+    }
+    ```   
+
+    ```php
+    //CourseManager interface
+    interface CourseManager {
+        public function getCourseName() : string;
+        public function getCourseMaster() : object;
+        public function addStudent(Student $student) : void;
+    }
+
+    //Inside student class
+    public function enrollCourse(CourseManager $course) : void {
+        if(in_array($course, $this->enrolled_courses)) {
+            $course_name = $course->getCourseName();
+            $course_master = $course->getCourseMaster();
+            throw new \Exception("{$this->name} already enrolled in {$course_name} with Master {$course_master->getName()}");
+        } else {
+            $this->enrolled_courses[] = $course;
+            $course->addStudent($this);
+        }
+    }
     ```
     **Pros**:  This prevent classes inheriting Course class from being passed as argument in assignBadge method
 
