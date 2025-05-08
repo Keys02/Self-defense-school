@@ -2,7 +2,7 @@
     declare(strict_types = 1);
     namespace SelfDefenseSchool;
 
-    class Course
+    class Course implements CourseManager
     {
         //Use MakeList trait
         use MakeList;

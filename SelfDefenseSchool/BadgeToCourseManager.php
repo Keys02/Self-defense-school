@@ -3,6 +3,6 @@
 
     interface BadgeToCourseManager
     {
-        public function setBadgeCourseName(Course $course);
+        public function setBadgeCourseName(Course $course) : void;
     }
 ?>

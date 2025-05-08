@@ -31,7 +31,7 @@
             return $badgeList;
         }
 
-        public function enrollCourse(Course $course) : void {
+        public function enrollCourse(CourseManager $course) : void {
             if(in_array($course, $this->enrolled_courses)) {
                 $course_name = $course->getCourseName();
                 $course_master = $course->getCourseMaster();
