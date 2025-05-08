@@ -4,6 +4,8 @@
 
     class Course 
     {
+        use MakeList;
+
         public function __construct(
             private string $course_id,
             private string $course_name,
@@ -22,14 +24,14 @@
             $this->students_taking_course[] = $student;
         }
 
-        public function getNoOfEnrolledStds() : int {
+        public function getNoOfEnrolledStudents() : int {
             return count($this->students_taking_course);
         }
 
-        // public function getEnrolledStds() : string {
-        //     $enrolled_students_list = "{"
-
-        // }
+        public function getEnrolledStudents() : string {
+            $enrolled_students_list = "$this->course_name enrolled students: {$this->list($this->students_taking_course, "students name")}";
+            return $enrolled_students_list;
+        }
 
         public function getCourseMaster() : object {
             return $this->course_master;

@@ -4,6 +4,7 @@
     namespace SelfDefenseSchool;
 
     include __DIR__ . "/StudentMaster.php";
+    include __DIR__ . "/MakeList.php";
 
     class Master extends StudentMaster
     {
