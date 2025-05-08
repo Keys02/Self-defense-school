@@ -3,9 +3,9 @@
     
     require __DIR__ . "/functions.php";
 
-    spl_autoload_register(function(string $class_name){
+    spl_autoload_register(function(string $class_name) {
         $path = str_replace('\\', '/', $class_name);
-        require __DIR__ . "/$path.php";
+        require __DIR__ . "/src/$path.php";
     });
 
     use SelfDefenseSchool\Master;
