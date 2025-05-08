@@ -1,11 +1,12 @@
 <?php
     declare(strict_types = 1);
-
-    require __DIR__ . "/SelfDefenseSchool/Master.php";
-    require __DIR__ . "/SelfDefenseSchool/Student.php";
-    require __DIR__ . "/SelfDefenseSchool/Course.php";
-    require __DIR__ . "/SelfDefenseSchool/Badge.php";
+    
     require __DIR__ . "/functions.php";
+
+    spl_autoload_register(function(string $class_name){
+        $path = str_replace('\\', '/', $class_name);
+        require __DIR__ . "/$path.php";
+    });
 
     use SelfDefenseSchool\Master;
     use SelfDefenseSchool\Student;
@@ -42,10 +43,10 @@
     // Testing Opoku Chris Student object
     echo "<h1 style='margin:0; padding:0'>Self Defense School</h1>";
     $student_chris->enrollCourse($muay_thai_fall);
+    
+    // Echo statements
     newline();
     echo $muay_thai_fall;
-
-    // Echo statements
     newline();
     newline();
     echo $muay_thai_fall_badge;
@@ -62,6 +63,4 @@
     newline();
     newline();
     echo $student_roy_lee;
-
-
 ?>
