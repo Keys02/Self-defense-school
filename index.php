@@ -36,7 +36,6 @@
     // Courses
     $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 25, $master_ong_bak, $muay_thai_completion_badge);
     $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 45, $master_shifu, $kung_fu_completion_badge);
-    echo $muay_thai_fall_badge->getBadgeCreatedDate();
     newline();
     newline();
     echo $muay_thai_fall_badge;
