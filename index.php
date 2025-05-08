@@ -28,9 +28,9 @@
     newline();
 
     // Badges
-    $muay_thai_completion_badge = new Badge("Black belt in Muay Thai");
-    $kung_fu_completion_badge = new Badge("Black belt in Kung fu");
-    $muay_thai_fall_badge = new Badge("Badge of Completion");
+    $muay_thai_completion_badge = new Badge("1", "Black belt in Muay Thai");
+    $kung_fu_completion_badge = new Badge("2", "Black belt in Kung fu");
+    $muay_thai_fall_badge = new Badge("3", "Badge of Completion");
 
 
     // Courses
