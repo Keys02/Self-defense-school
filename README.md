@@ -92,6 +92,7 @@
 ### 3. Creating fields by using constructor parameters and inherited parent's constructor
 - Class fields were created using parameters of the constructor by specifying access level and using parent method to assign inherited fields when the class inherits from another class.
   ```php
+    //Student class constructor inheriting from StudentMaster class
     public function __construct
     (
         string $id,
