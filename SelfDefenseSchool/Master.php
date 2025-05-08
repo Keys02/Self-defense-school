@@ -3,10 +3,10 @@
 
     namespace SelfDefenseSchool;
 
-    include __DIR__ . "/StudentMaster.php";
-    include __DIR__ . "/MakeList.php";
-    include __DIR__ . "/BadgeToCourseManager.php";
-    include __DIR__ . "/CourseManager.php";
+    spl_autoload_register(function(string $file_name) {
+        $path = str_replace('\\', '/', $file_name);
+        require __DIR__ . "/$path.php";
+    });
 
     class Master extends StudentMaster
     {
