@@ -88,7 +88,23 @@
             $badgeList = "$this->name badges: {$this->list($this->badges, "badges")}";
             return $badgeList;
     }
-    ```
+    ```  
+### 3. Creating fields by using constructor parameters and inherited parent's constructor
+- Class fields were created using parameters of the constructor by specifying access level and using parent method to assign inherited fields when the class inherits from another class.
+  ```php
+    public function __construct
+    (
+        string $id,
+        string $name,
+        string $specialization,
+        string $weapon_of_choice,
+        private array $badges = [],
+        private array $enrolled_courses = []
+    ){
+        parent::__construct($id, $name, $specialization, $weapon_of_choice);
+    }
+  ```
+
 ### Browser screenshot
 ![Screenshot](screenshots/chrome_Op89hrnuJn.png)
 
