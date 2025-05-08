@@ -2,7 +2,7 @@
     declare(strict_types = 1);
     namespace SelfDefenseSchool;
 
-    class Course 
+    class Course
     {
         //Use MakeList trait
         use MakeList;
@@ -24,7 +24,9 @@
         }
 
         public function addStudent(Student $student) : void {
-            $this->students_taking_course[] = $student;
+            if($student instanceof Student) {   
+                $this->students_taking_course[] = $student;
+            }
         }
 
         public function getNoOfEnrolledStudents() : int {
@@ -41,14 +43,16 @@
         }
 
         public function assignBadgeToCourse(Badge $badge) : void {
-            $this->assignBadge($badge);
+            if($badge instanceof Badge) {
+                $this->assignBadge($badge);
+            }
         }
 
         public function getCourseBadge() : string {
             return $this->course_badge->badge_name;
         }
 
-        private function assignBadge(Badge $badge) {
+        private function assignBadge(BadgeToCourseManager $badge) {
             if($badge instanceof Badge) {
                 $this->course_badge = $badge;
                 $badge->setBadgeCourseName($this);

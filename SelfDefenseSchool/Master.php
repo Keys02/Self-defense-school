@@ -5,6 +5,7 @@
 
     include __DIR__ . "/StudentMaster.php";
     include __DIR__ . "/MakeList.php";
+    include __DIR__ . "/BadgeToCourseManager.php";
 
     class Master extends StudentMaster
     {

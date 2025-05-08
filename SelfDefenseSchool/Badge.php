@@ -2,7 +2,7 @@
     declare(strict_types = 1);
     namespace SelfDefenseSchool;
     
-    class Badge
+    class Badge implements BadgeToCourseManager
     {
         public function __construct(
             private string $badge_id,

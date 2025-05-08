@@ -1,7 +1,8 @@
 <?php
     namespace SelfDefenseSchool;
 
-    Trait MakeList {
+    Trait MakeList 
+    {
         public function list(array $array_list, string $list_type) : string {
             $array_list_last_key = array_key_last($array_list);
             $made_list = "{";
