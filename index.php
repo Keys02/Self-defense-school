@@ -17,15 +17,11 @@
     $master_ong_bak = new Master("2", "Master Ong Bak", "Muay Thai", "Mai Sok", 5);
     $master_ryan_gordon = new Master("3", "Master Ryan Gordon", "Jiu Jitsu", "Katana", 4);
     $master_boyka = new Master("4", "Master Boyka", "Karate", "stick", 5);
-    echo $master_boyka;
-    newline();
-    newline();
+
 
     // Students
     $student_roy_lee = new Student("1", "Roy Lee", "Kung fu", "stick");
     $student_chris = new Student("2", "Opoku Chris", "Muay Thai", "Nunchaku");
-    echo $student_chris;
-    newline();
 
     // Badges
     $muay_thai_completion_badge = new Badge("1", "Black belt in Muay Thai");
@@ -70,6 +66,12 @@
     newline();
     echo $student_roy_lee->getEnrolledCourses();
     newline();
+    echo $master_boyka;
+    newline();
+    newline();
+    echo $student_chris;
+    newline();
+    echo $student_roy_lee;
 
 
 ?>
