@@ -12,7 +12,7 @@
                         $made_list .= $value->getCourseName();
                         break;
                     case "badges";
-                        $made_list .= $value->getStudentBadges();
+                        $made_list .= $value->getBadgeName();
                         break;
                     case "students name";
                         $made_list .= $value->getName();
