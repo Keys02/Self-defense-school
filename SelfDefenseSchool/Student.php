@@ -82,5 +82,18 @@
                 throw new \Exception("User not enrolled in the course you are trying to drop");
             }
         }
+
+
+        public function __toString() : string {
+            return <<<STUDENT_DETAILS
+                        $this->name: {<br/>
+                            &emsp;ID: $this->id <br/>
+                            &emsp;Specialization: $this->specialization <br/>
+                            &emsp;Weapon of Choice: $this->weapon_of_choice <br/>
+                            &emsp;Badges: {$this->list($this->badges, "badges")} <br/>
+                            &emsp;Enrolled Courses: {$this->list($this->enrolled_courses, "courses name")}<br/>
+                        }
+                    STUDENT_DETAILS;
+        }
     }
 ?>

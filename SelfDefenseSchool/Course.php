@@ -46,6 +46,18 @@
         public function getCourseBadge() : string {
             return $this->course_badge->badge_name;
         }
+
+        public function __toString() : string {
+            return <<<COURSE_DETAILS
+                        $this->course_name: {<br/>
+                            &emsp;ID: $this->course_id<br/>
+                            &emsp;Fight style used: $this->fighting_style<br/>
+                            &emsp;Course duration: $this->course_duration_in_hours hours<br/>
+                            &emsp;Course Master: {$this->getCourseMaster()->getName()}<br/>
+                            &emsp;Students Enrolled: {$this->list($this->students_taking_course, "students name")}<br/>
+                        }
+                    COURSE_DETAILS;
+        }
         
     }
 ?>
