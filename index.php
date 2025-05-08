@@ -30,8 +30,8 @@
 
 
     // Courses
-    $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 25, $master_ong_bak, $muay_thai_completion_badge);
-    $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 45, $master_shifu, $kung_fu_completion_badge);
+    $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 8760, $master_ong_bak, $muay_thai_completion_badge);
+    $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 8760 , $master_shifu, $kung_fu_completion_badge);
 
 
     // Testing Roy Lee Student object
@@ -52,25 +52,14 @@
     newline();
     newline();
     echo $kung_fu_completion_badge;
-    newline();
-    newline();
-    echo $muay_thai_fall->getNoOfEnrolledStudents();
-    newline();
-    echo $muay_thai_fall->getEnrolledStudents();
-    newline();
-    echo $kung_fu_fall->getNoOfEnrolledStudents();
-    newline();
-    echo $student_roy_lee->getEnrolledCourses();
-    newline();
-    echo $student_roy_lee->getStudentBadges();
+    newline();  
     $student_roy_lee->dropCourse($muay_thai_fall);
-    newline();
-    echo $student_roy_lee->getEnrolledCourses();
     newline();
     echo $master_boyka;
     newline();
     newline();
     echo $student_chris;
+    newline();
     newline();
     echo $student_roy_lee;
 
