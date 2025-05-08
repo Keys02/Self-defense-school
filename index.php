@@ -40,6 +40,7 @@
     $student_roy_lee->assignBadge($muay_thai_fall_badge);
 
     // Testing Opoku Chris Student object
+    echo "<h1 style='margin:0; padding:0'>Self Defense School</h1>";
     $student_chris->enrollCourse($muay_thai_fall);
     newline();
     echo $muay_thai_fall;
