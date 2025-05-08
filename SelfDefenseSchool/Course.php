@@ -4,6 +4,7 @@
 
     class Course 
     {
+        //Use MakeList trait
         use MakeList;
 
         public function __construct(
@@ -14,7 +15,9 @@
             private Master $course_master,
             private Badge $course_badge,
             private array $students_taking_course = []
-        ){}
+        ){
+            $this->assignBadge($course_badge);
+        }
 
         public function getCourseName() : string {
             return $this->course_name;
@@ -38,20 +41,25 @@
         }
 
         public function assignBadgeToCourse(Badge $badge) : void {
-            if($badge instanceof Badge) {
-                $this->course_badge = $badge;
-            }
+            $this->assignBadge($badge);
         }
 
         public function getCourseBadge() : string {
             return $this->course_badge->badge_name;
         }
 
+        private function assignBadge(Badge $badge) {
+            if($badge instanceof Badge) {
+                $this->course_badge = $badge;
+                $badge->setBadgeCourseName($this);
+            }
+        }
+
         public function __toString() : string {
             return <<<COURSE_DETAILS
                         $this->course_name: {<br/>
                             &emsp;ID: $this->course_id<br/>
-                            &emsp;Fight style used: $this->fighting_style<br/>
+                            &emsp;Fight style: $this->fighting_style<br/>
                             &emsp;Course duration: $this->course_duration_in_hours hours<br/>
                             &emsp;Course Master: {$this->getCourseMaster()->getName()}<br/>
                             &emsp;Students Enrolled: {$this->list($this->students_taking_course, "students name")}<br/>

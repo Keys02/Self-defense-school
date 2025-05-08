@@ -5,6 +5,7 @@
 
     class Student extends StudentMaster
     {
+        //Use MakeList trait
         use MakeList;
 
         public function __construct
@@ -25,19 +26,6 @@
             }
         }
 
-        // public function getStudentBadges() : string {
-        //     $badges_last_key = array_key_last($this->badges);
-        //     $badgeList = "$this->name badges: {";
-        //     foreach($this->badges as $key => $badge) { 
-        //         $badgeList .= "$badge";
-        //         if($key !== $badges_last_key) {
-        //             $badgeList .= ", ";
-        //         }
-        //     }
-        //     $badgeList .= "}";
-        //     return $badgeList;
-        // }
-
         public function getStudentBadges() : string {
             $badgeList = "$this->name badges: {$this->list($this->badges, "badges")}";
             return $badgeList;
@@ -53,20 +41,6 @@
                 $course->addStudent($this);
             }
         }
-
-        // public function getEnrolledCourses() : string {
-        //     $enrolled_courses_last_key = array_key_last($this->enrolled_courses);
-        //     $enrolled_courses_list  = "$this->name enrolled courses: {";
-        //     foreach($this->enrolled_courses as $key => $enrolled_course) {
-        //         $enrolled_courses_list .= "{$enrolled_course->getCourseName()}";
-        //         if($key !== $enrolled_courses_last_key) {
-        //             $enrolled_courses_list .= ", ";
-        //         }
-                
-        //     }
-        //     $enrolled_courses_list .= "}";
-        //     return $enrolled_courses_list;
-        // }
 
         public function getEnrolledCourses() : string {
             $enrolled_courses_list  = "$this->name enrolled courses: {$this->list($this->enrolled_courses, "courses name")}";

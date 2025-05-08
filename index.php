@@ -26,18 +26,23 @@
     $student_chris = new Student("2", "Opoku Chris", "Muay Thai", "Nunchaku");
     echo $student_chris;
     newline();
-    newline();
 
     // Badges
-    $muay_thai_completion_badge = new Badge("Black belt in Muay Thai", true);
-    $kung_fu_completion_badge = new Badge("Black belt in Kung fu", true);
+    $muay_thai_completion_badge = new Badge("Black belt in Muay Thai");
+    $kung_fu_completion_badge = new Badge("Black belt in Kung fu");
     $muay_thai_fall_badge = new Badge("Badge of Completion");
 
 
     // Courses
     $muay_thai_fall = new Course("1", "Muay Thai fall", "Muay Thai", 25, $master_ong_bak, $muay_thai_completion_badge);
     $kung_fu_fall = new Course("2", "Kung fu fall", "Kung Fu", 45, $master_shifu, $kung_fu_completion_badge);
-    echo $kung_fu_fall;
+    echo $muay_thai_fall_badge->getBadgeCreatedDate();
+    newline();
+    newline();
+    echo $muay_thai_fall_badge;
+    newline();
+    newline();
+    echo $kung_fu_completion_badge;
     newline();
     newline();
 
@@ -60,5 +65,8 @@
 
     // Testing Opoku Chris Student object
     $student_chris->enrollCourse($muay_thai_fall);
-    echo $muay_thai_fall->getEnrolledStudents();
+    newline();
+    echo $muay_thai_fall;
+
+
 ?>
