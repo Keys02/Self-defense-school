@@ -48,8 +48,8 @@
             }
         }
 
-        public function getCourseBadge() : string {
-            return $this->course_badge->badge_name;
+        public function getCourseBadge() : Badge {
+            return $this->course_badge;
         }
 
         private function assignBadge(BadgeToCourseManager $badge) {
