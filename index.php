@@ -15,7 +15,7 @@
 
     // Masters
     $master_shifu = new Master("1", "Master Shifu", "Kung fu", "stick", 5);
-    $master_ong_bak = new Master("2", "Master Ong Bak", "Muay Thai", "Mai Sok", 5);
+    $master_ong_bak = new Master(id:"2", name: "Master Ong Bak", specialization: "Muay Thai", weapon_of_choice: "Mai Sok", rank:5);
     $master_ryan_gordon = new Master("3", "Master Ryan Gordon", "Jiu Jitsu", "Katana", 4);
     $master_boyka = new Master("4", "Master Boyka", "Karate", "stick", 5);
 

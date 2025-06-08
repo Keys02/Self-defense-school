@@ -5,20 +5,11 @@
 
     class Student extends StudentMaster
     {
+        private array $badges = [];
+        private array $enrolled_courses = [];
+
         //Use MakeList trait
         use MakeList;
-
-        public function __construct
-        (
-            string $id,
-            string $name,
-            string $specialization,
-            string $weapon_of_choice,
-            private array $badges = [],
-            private array $enrolled_courses = []
-        ){
-            parent::__construct($id, $name, $specialization, $weapon_of_choice);
-        }
 
         public function assignBadge(Badge $badge) : void {
             if($badge instanceof Badge) {
