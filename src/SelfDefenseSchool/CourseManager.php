@@ -1,6 +1,7 @@
 <?php
     namespace SelfDefenseSchool;
 
+    
     interface CourseManager {
         public function getCourseName() : string;
         public function getCourseMaster() : object;

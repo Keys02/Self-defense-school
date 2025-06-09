@@ -1,6 +1,7 @@
 <?php
     namespace SelfDefenseSchool;
 
+    
     Trait MakeList 
     {
         public function list(array $array_list, string $list_type) : string {

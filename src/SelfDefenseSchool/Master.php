@@ -1,12 +1,9 @@
 <?php
     declare(strict_types = 1);
 
+
     namespace SelfDefenseSchool;
 
-    spl_autoload_register(function(string $file_name) {
-        $path = str_replace('\\', '/', $file_name);
-        require __DIR__ . "/$path.php";
-    });
 
     class Master extends StudentMaster
     {

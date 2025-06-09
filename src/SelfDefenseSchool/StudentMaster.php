@@ -3,6 +3,7 @@
 
     namespace SelfDefenseSchool;
 
+    
     abstract class StudentMaster
     {
         public function __construct

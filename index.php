@@ -2,6 +2,7 @@
     declare(strict_types = 1);
     
     require __DIR__ . "/functions.php";
+    require __DIR__ . "/src/SelfDefenseSchool/StudentMaster.php";
 
     spl_autoload_register(function(string $class_name) {
         $path = str_replace('\\', '/', $class_name);

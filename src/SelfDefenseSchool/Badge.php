@@ -1,7 +1,9 @@
 <?php
     declare(strict_types = 1);
+    
     namespace SelfDefenseSchool;
     
+
     class Badge implements BadgeToCourseManager
     {
         public function __construct(
